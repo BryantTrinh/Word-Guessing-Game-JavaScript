@@ -58,5 +58,87 @@ function loseGame() {
         clearInterval(timer);
         loseGame();
       }
+      // 1000 = 10 seconds
     }, 1000);
   }
+
+  // This is for creating blank screen and we want to randomly pick words from word array
+  function renderBlanks() {
+    chosenWord = words[Math.floor(Math.random() * words.length)];
+    lettersinChosenWord = chosenWord.split("");
+    numBlanks = lettersInChosenWord.length;
+    blankLetters = []
+  }
+
+  // Now we need to write a loop to push the "blanks" to "blanksLetters" array
+  for (var i =0; i< numBlanks; i++) {
+    blankLetters.push("_");
+    // console.log("ping" + blankLetters);
+  }
+
+  // convert blankLetters array into string to render it on the screen
+  wordBlank.textContent = blankLetters.join(" ")
+}
+
+// We need to update win count on screen and to store it in local
+function setWins() {
+  win.textContent = winCounter;
+  localStorage.setItem("winCount", winCounter);
+}
+
+// Do the same thing for lose count
+
+function setLosses() {
+  lose.textContent = loseCounter;
+  localStorage.setItem("loseCount", loseCounter);
+}
+
+// Get stored value from local storage. See if it exists first.
+function getWins() {
+  var storedWins = localStorage.getItem("winCount");
+  // We check to see if stored value exists first, if it doesn't, counter set to 0 
+  if (storedWins === null) {
+    winCounter = 0;
+  } else {
+    // If we are able to retrieve from storage, set winCounter to that stored value.
+    winCounter = storedWins;
+  }
+  // Show win count to page
+  win.textContent = winCounter;
+}
+
+function getLosses() {
+  if (storedLosses === null) {
+    loseCounter = 0;
+  } else {
+    loseCounter = storedLosses;
+  }
+    lose.textContent = loseCounter
+}
+
+// We need to see if word equals blankLetters array when converted to string, set isWin to true. First part of timer function/ is used in timer function to see if win condition is met.
+function checkWin() {
+  if (chosenWord === blankLetters.join(" ") {
+    isWin = true;
+  }
+}
+
+// Test if letters we guess are in the word and renders to screen.
+function checkLetters(letter) {
+  var letterInWord = false;
+  for (var i = 0; i < numBlanks; i++) {
+    if (chosenWord[i] === letter) {
+      letterInWord = true;
+    }
+  }
+  if(letterInWord) {
+    for var f = 0; f < numBlanks; f++) {
+      if (chosenWord[f] === letter) {
+        blanksLetters[f] = letter;
+      }
+    }
+    wordBlank.textContent = blankLetters.join(" ");
+  }
+}
+
+// Everything should be complete besides adding event listeners to listen to any key event.

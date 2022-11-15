@@ -64,6 +64,15 @@ button {
   margin-top: 25px;
 } 
 
+.card {
+  background: radial-gradient(circle, yellow 0%, brown 100%);
+  border: 1px solid rgb(109, 143, 150);
+  border-radius: 10px;
+  box-shadow: black;
+  margin: 0 auto;
+  padding: 40px;
+}
+
 button {
   background: radial-gradient(circle, yellow 0%, brown 100%);
   font-size: 5em;
@@ -76,8 +85,60 @@ button {
   transition-property:background-color;
   transition-duration: .20s;
   transition-timing-function: linear;
-  
+}
 
-  
-  
+.word-guesser {
+  width: 50vw;
+  height: auto;
+  color: rgb(170, 28, 52);
+}
+
+.results {
+  width: 25vw;
+  height: 300px;
+}
+
+.timer {
+  height: 200px;
+  padding: 15px;
+  background: rgb(190, 123, 21);
+  color: black;
+  text-align: center;
+}
+
+.timer-text {
+  padding: auto;
+}
+
+/* Add media screen, max width for word guess, section, main */
+@media screen and (max-width: 1200px) {
+  main {
+    flex-direction: column;
+  }
+
+
+  .word-guess, .result {
+    width: 100vw;
+  }
+
+  section {
+    background-color: white;
+    margin: 20 auto;
+    width: 100vw;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .big-font {
+    font-size: 2em;
+  }
+
+  .reset-score-btn {
+    font-size: 10px;
+    width: 20px;
+  }
+
+  .timer {
+    height: 200px;
+  }
 }

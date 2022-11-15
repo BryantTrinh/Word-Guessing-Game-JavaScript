@@ -26,6 +26,15 @@ function init() {
   getLosses();
 }
 
+// add a startGame function when the start button is pressed on. Using startButton.disabled prevents start button from being clicked when game is in progress.
+function startGame() {
+  isWin = false;
+  timerCount = 10;
+  startButton.disabled = true;
+  renderBlanks()
+  startTimer()
+}
+
 //winGame function called when condition is met
 function winGame() {
   wordBlank.textContent = "You have Won! ";
@@ -142,3 +151,36 @@ function checkLetters(letter) {
 }
 
 // Everything should be complete besides adding event listeners to listen to any key event.
+document.addEventListener("keydown", function(event) {
+  if (timerCount === 0) {
+    return;
+  }
+
+// we should convert letters to lower case, then test if key pushed is a letter.
+  var key = event.key.toLowerCase();
+  var alphabetNumericCharacters = "abcdefghijklmnopqrstuvwxyz0123456789 ".split(" ");
+  if (alphabetNumericCharacters.includes(key)) {
+  var letterGuessed = event.key;
+    checkLetters(letterGuessed)
+    checkWin();
+  }
+});
+
+// add event listener to start button to call startGame function when we click
+startButton.addEventListener("click", startGame);
+
+// We use init so that it runs when page opens
+init();
+
+// add reset button
+
+var resetScoreBtn = document.querySelector(".resetScoreBtn");
+
+function resetGame (){
+  winCounter = 0;
+  loseCounter = 0;
+  setWins()
+  setLosses()
+}
+
+resetScoreBtn.addEventListener("click", resetGame);

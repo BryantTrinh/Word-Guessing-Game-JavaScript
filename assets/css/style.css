@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+}
+
+header {
+  text-align: center;
+  color: rgb(255, 255, 255);
+  padding: 50px;
+  background: rgb(160, 56, 82);
+  border-bottom: 30px rgb(109, 143, 150);
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+body {
+  font-family:'Courier New', Courier, monospace;
+  display: flex;
+  flex-direction: column;
+  min-height: 125vh;
+  justify-content: flex-start;
+  margin: 0 0 0 0;
+  background: linear-gradient(10deg, rgb(160, 56, 82) 0%, white 70%);
+}
+
+section {
+  flex: 0 auto;
+  padding: 10px;
+  margin-top: 50px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+
+button {
+  background: radial-gradient(circle, yellow 0%, brown 100%);
+  border-radius: 10px;
+  color: grey;
+  font-size: 2em;
+  padding: 20px 50px;
+  text-align: center;
+}
+
+.big-font {
+  font-size: 4em;
+  text-align: center;
+
+}
+
+.reset-score-btn {
+  font-size: 15px;
+  height: 25px;
+  line-height: 6px;
+  margin-top: 20px;
+
+}
+
+.wins-losses-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+} 
+
+button {
+  background: radial-gradient(circle, yellow 0%, brown 100%);
+  font-size: 5em;
+  color:rgb(0, 0, 0);
+  max-width: 275px;
+  line-height: 75px;
+  text-align: center;
+  border-radius: 15px;
+  margin-top: 0.5em;
+  transition-property:background-color;
+  transition-duration: .20s;
+  transition-timing-function: linear;
+  
+
+  
+  
+}

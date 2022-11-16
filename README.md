@@ -30,5 +30,5 @@ MIT License.
 
 ## Features
 
-- Uses HTML, CSS, JavaScript, and DOM (Document Object Model)
+- Uses HTML, CSS, JavaScript, DOM (Document Object Model), and utilizes local storage to store wins and losses.
 - Timer interval, wins and losses counter, start button, reset button, user input to play game.

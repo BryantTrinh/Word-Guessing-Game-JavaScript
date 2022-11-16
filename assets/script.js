@@ -17,13 +17,14 @@ var possibleWords = [
   "delete",
   "typeof",
 ];
+
 var currentWord;
 var canType = false;
 var lettersGuesed = [];
 var didWin = false;
 var wordGuessInterval;
 var wins = localStorage.getItem("wins") || 0;
-var wins = localStorage.getItem("losses") || 0;
+var losses = localStorage.getItem("losses") || 0;
 var wordBlanks = document.querySelector(".word-blanks");
 var winDisplay = document.querySelector(".win");
 var loseDisplay = document.querySelector(".lose");
@@ -63,12 +64,12 @@ function endGame() {
     wins++;
     localStorage.setItem("wins", wins);
     winDisplay.textContent = wins;
-    wordBlanks.textContent = "You HAVE WON!!! ";
+    wordBlanks.textContent = "YOU HAVE WON!!!";
   } else {
     losses++;
     localStorage.setItem("losses", losses);
     loseDisplay.textContent = losses;
-    wordBlanks.textContent = "You HAVE LOST!!! ";
+    wordBlanks.textContent = "YOU HAVE LOST!!! ";
   }
 }
 
@@ -76,7 +77,7 @@ function renderCurrentGuess (letterGuessed) {
   var hasBlanks = false;
   var wordSeparates = currentWord.split("");
   var currentGuess = "";
-  for (var i = 0; i <wordSeparates.length; i++) {
+  for (var i = 0; i < wordSeparates.length; i++) {
     if (wordSeparates[i] === letterGuessed || lettersGuessed.includes(wordSeparates[i])) {
       currentGuess += (wordSeparates[i] + " ");
 
@@ -96,11 +97,11 @@ function renderCurrentGuess (letterGuessed) {
   }
 }
 
-document.querySelector(".reset-button").addEventListener("click", function()) {
+document.querySelector(".reset-button").addEventListener("click", function () {
   resetScores();
 })
 
-document.querySelector(".start-button").addEventListener("click", function() {
+document.querySelector(".start-button").addEventListener("click", function () {
   lettersGuessed = [];
   didWin = false;
   currentWord = possibleWords[Math.floor(Math.random() * possibleWords.length)];
@@ -108,7 +109,7 @@ document.querySelector(".start-button").addEventListener("click", function() {
   renderCurrentGuess(null);
 });
 
-document.addEventListener("keydown", function()" {
+document.addEventListener("keydown", function () {
   if(!canType) {
     return
   }

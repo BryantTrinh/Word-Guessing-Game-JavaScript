@@ -2,12 +2,52 @@
   box-sizing: border-box;
 }
 
-header {
+body {
+  font-family: Arial;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: flex-start;
+  background: linear-gradient(0deg, rgba(19,41,61,1) 0%, rgba(237,245,249,1) 63%);
+}
+
+.reset-button {
+  font-size: 16px;
+  height: 30px;
+  line-height: 8px;
+  margin-top: 20px;
+}
+
+.win-loss-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+button {
+  background: radial-gradient(circle, rgba(240,230,140,1) 0%, rgba(187,96,33,0.9542191876750701) 100%);
+  border-radius: 8px;
+  color: #13293d;
+  cursor: pointer;
+  font-size: 2em;
+  letter-spacing: 0.21px;
+  line-height: 16px;
+  max-width: 255px;
+  padding: 20px 52px;
   text-align: center;
-  color: rgb(255, 255, 255);
-  padding: 30px;
-  background: rgb(160, 56, 82);
-  border-bottom: 30px rgb(109, 143, 150);
+  transition-duration: 0.15s;
+  transition-property: background-color;
+  transition-timing-function: linear;
+  margin-top: 0.6em;
+}
+
+header {
+  padding: 40px;
+  text-align: center;
+  background: #13293d;
+  color: #fff;
+  border-bottom:30px #879274;
 }
 
 main {
@@ -16,126 +56,85 @@ main {
   justify-content: space-around;
 }
 
-body {
-  font-family:'Courier New', Courier, monospace;
-  display: flex;
-  flex-direction: column;
-  min-height: 125vh;
-  justify-content: flex-start;
-  margin: 0 0 0 0;
-  background: linear-gradient(10deg, rgb(160, 56, 82) 0%, white 70%);
-}
-
 section {
   flex: 0 auto;
-  padding: 10px;
+  padding: 8px;
   margin-top: 50px;
-  border-radius: 10px;
   background-color: white;
+  border-radius: 8px;
 }
 
-.big-font {
-  font-size: 2.5em;
-  text-align: center;
-
+.word-guess {
+  width: 55vw;
+  height: 400px;
 }
 
-.reset-score-btn {
-  font-size: 15px;
-  height: 65px;
-  line-height: 15px;
-  margin-top: 20px;
-
+.results {
+  width: 30vw;
+  height: 400px;
 }
-
-.wins-losses-container {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-} 
 
 .card {
-  background: radial-gradient(circle, yellow 0%, brown 100%);
-  border: 4px solid rgb(128, 15, 71);
-  border-radius: 10px;
-  box-shadow: rgb(26, 23, 23);
+  background: radial-gradient(circle, rgba(240,230,140,1) 0%, rgba(187,124,33,0.604079131652661) 100%);
+  border: 1px solid #eceff1;
+  border-radius: 8px;
+  box-shadow: rgba(60, 64, 67, 2) 0 1px 2px 0,
+    rgba(60, 64, 67, 0.15) 0 2px 4px 3px;
   margin: auto;
-  padding: 15px;
-}
-
-button {
-  background: radial-gradient(circle, yellow 0%, brown 100%);
-  font-size: 5em;
-  color:rgb(0, 0, 0);
-  max-width: 275px;
-  line-height: 75px;
-  text-align: center;
-  border-radius: 15px;
-  margin-top: 0.5em;
-  transition-property:background-color;
-  transition-duration: .20s;
-  transition-timing-function: linear;
-  cursor: pointer;
-  letter-spacing: 0.25px;
-  padding: 20px 50px;
-}
-
-.word-guesser {
-  width: 50vw;
-  height: 450px;
+  padding: 20px;
 }
 
 .word-blanks {
   line-height: 360px;
 }
 
-.results {
-  width: 25vw;
-  height: 450px;
+.large-font {
+  font-size: 3.5em;
+  text-align:center;
 }
 
 .timer {
-  height: 250px;
-  padding: 30px;
-  background: rgb(190, 123, 21);
-  color: black;
+  height: 240px;
+  padding: 10px;
+  background: #13293d;
+  color: #fff;
   text-align: center;
 }
 
 .timer-text {
-  padding: 50px;
+  padding: 55px;
 }
 
-/* Add media screen, max width for word guess, section, main */
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1183px) {
   main {
     flex-direction: column;
   }
 
-
-  .word-guess, 
-  .result {
-    width: 100vw;
+  .word-guess,
+  .results {
+    width: 90vw;
   }
 
   section {
     background-color: white;
-    margin: 25px auto;
-    width: 100vw;
+    margin: 20px auto;
+    width: 92vw;
   }
 }
 
-@media screen and (max-width: 600px) {
-  .big-font {
+@media screen and (max-width: 504px) {
+  .large-font {
     font-size: 2em;
   }
 
-  .reset-score-btn {
-    font-size: 10px;
-    width: 20px;
+  .reset-button {
+    font-size: 12px;
+    width: 20ox;
+    
   }
 
   .timer {
     height: 200px;
   }
+ 
 }

@@ -41,6 +41,7 @@ function resetScores() {
 
   localStorage.setItem("wins", wins);
   localStorage.setItem("losses", losses);
+
 }  
 
 function initTimer() {

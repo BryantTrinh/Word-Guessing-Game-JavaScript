@@ -1,59 +1,34 @@
-# Module 04 Mini-Project: Word Guess
+# Word Guessing Game
 
-In this activity, you will work with a group to build a game using JavaScript and Web APIs.
+## Description
 
-## Instructions
+This Word Guessing Game was created so that users are able to guess words against a timer and are able to keep track of their wins and losses.
 
-The completed application should meet the following criteria:
 
-* As a user, I want to start the game by clicking on a button. 
+## Installation
 
-* As a user, I want to try and guess a word by filling in a number of blanks that match the number of letters in that word.
+Run the index.html file.
 
-* As a user, I want the game to be timed. 
 
-* As a user, I want to win the game when I have guessed all the letters in the word.
+## Usage
 
-* As a user, I want to lose the game when the timer runs out before I have guessed all the letters.
+- Start the game by pressing the "Start" button in the top of the page.
+- Begin typing letters and fill out the blank spots.
+- If you are able to guess the word, your Win counter will increase, if you lose, your losses counter will increase.
+- You are able to reset your score by pressing the "Reset Score" button.
 
-* As a user, I want to see my total wins and losses on the screen. 
+    ![Interface of game](assets/images/initial.png)
+    ![Initializing game](assets/images/startofgame.png)
+    ![Loss Counter if you lose](assets/images/losscounter.png)
+    ![Win Counter if you win](assets/images/wincounter.png)
+    
 
-### Specifications
+## License
 
-* When a user presses a letter key, the user's guess should be captured as a key event.
+MIT License.
 
-* When a user correctly guesses a letter, the corresponding blank "_" should be replaced by the letter. For example, if the user correctly selects "a", then "a _ _ a _" should appear. 
 
-* When a user wins or loses a game, a message should appear and the timer should stop. 
+## Features
 
-* When a user clicks the start button, the timer should reset. 
-
-* When a user refreshes or returns to the brower page, the win and loss counts should persist.
-
-## 💡 Notes
-
-Refer to the documentation:
-
-* [MDN Web Docs on KeyboardEvent](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent)
-
-* [MDN Web Docs on Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
-
-* [MDN Web Docs on loops and iteration](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration)
-
-* [MDN Web Docs on setInterval()](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval)
-
-* [MDN Web Docs on clearInterval()](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/clearInterval)
-
-* [MDN Web Docs on localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
-
-## 🏆 Bonus
-
-If you have completed this activity, work through the following challenge with your group to further your knowledge:
-
-* How can you add a reset button to set the win and loss counts back to zero? 
-
-Use [Google](https://www.google.com) or another search engine to research this.
-
----
-
-© 2022 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+- Uses HTML, CSS, JavaScript, and DOM (Document Object Model)
+- Timer interval, wins and losses counter, start button, reset button, user input to play game.
